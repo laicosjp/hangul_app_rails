@@ -14,7 +14,7 @@
 #
 FactoryBot.define do
   factory :course do
-    slug { Faker::Lorem.slug }
+    slug { Faker::Internet.slug }
     title { Faker::Lorem.sentence }
   end
 end
