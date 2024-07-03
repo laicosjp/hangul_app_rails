@@ -360,6 +360,7 @@ GEM
       sorbet-static (= 0.5.11422)
     sorbet-runtime (0.5.11422)
     sorbet-static (0.5.11422-universal-darwin)
+    sorbet-static (0.5.11422-x86_64-linux)
     sorbet-static-and-runtime (0.5.11422)
       sorbet (= 0.5.11422)
       sorbet-runtime (= 0.5.11422)
