@@ -12,6 +12,15 @@ module GeneratedUrlHelpersModule
   def api_v1_auth_validate_token_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
+  def api_v1_course_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def api_v1_courses_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def api_v1_profile_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def api_v1_user_password_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
@@ -33,6 +42,9 @@ module GeneratedUrlHelpersModule
   def destroy_user_session_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
+  def edit_api_v1_profile_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def edit_api_v1_user_password_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
@@ -43,6 +55,9 @@ module GeneratedUrlHelpersModule
 
   sig { params(args: T.untyped).returns(String) }
   def edit_user_registration_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def new_api_v1_profile_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def new_api_v1_user_password_url(*args); end

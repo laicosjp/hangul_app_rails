@@ -12,6 +12,15 @@ module GeneratedPathHelpersModule
   def api_v1_auth_validate_token_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
+  def api_v1_course_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def api_v1_courses_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def api_v1_profile_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def api_v1_user_password_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
@@ -33,6 +42,9 @@ module GeneratedPathHelpersModule
   def destroy_user_session_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
+  def edit_api_v1_profile_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def edit_api_v1_user_password_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
@@ -43,6 +55,9 @@ module GeneratedPathHelpersModule
 
   sig { params(args: T.untyped).returns(String) }
   def edit_user_registration_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def new_api_v1_profile_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def new_api_v1_user_password_path(*args); end
