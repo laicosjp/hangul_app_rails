@@ -1,4 +1,5 @@
 # typed: true
+
 # == Schema Information
 #
 # Table name: languages
