@@ -19,4 +19,6 @@ class Language < ApplicationRecord
   validates :code, presence: true, uniqueness: true
   validates :name, presence: true
   validates :flag, presence: true
+
+  has_many :words, dependent: :destroy
 end

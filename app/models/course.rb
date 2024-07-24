@@ -15,4 +15,6 @@
 class Course < ApplicationRecord
   validates :title, presence: true
   validates :slug, presence: true, uniqueness: true
+
+  has_many :words, dependent: :destroy
 end
