@@ -15,8 +15,8 @@
 #
 FactoryBot.define do
   factory :language do
-    name { "MyString" }
-    code { "MyString" }
-    flag { "MyString" }
+    name { "English" }
+    code { "en" }
+    flag { "🇬🇧" }
   end
 end
