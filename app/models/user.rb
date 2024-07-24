@@ -37,9 +37,12 @@
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 class User < ApplicationRecord
+
+  # devise より下に書くと登録時にメールが来ない、などのバグ発生
+  include DeviseTokenAuth::Concerns::User
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-  include DeviseTokenAuth::Concerns::User
+         :recoverable, :rememberable, :validatable, :confirmable
 end
