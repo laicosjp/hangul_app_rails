@@ -10,9 +10,9 @@ RailsAdmin.config do |config|
   # Optional:
   # Configure global RailsAdminImport options
   # Configure pass filename to records hashes
-  config.configure_with(:import) do |config|
-    config.logging = true
-    config.pass_filename = true
+  config.configure_with(:import) do |import_config|
+    import_config.logging = true
+    import_config.pass_filename = true
   end
 
   # Optional:
