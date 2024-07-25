@@ -4,6 +4,7 @@ ruby '3.0.5'
 
 gem 'bootsnap', require: false
 gem 'cancancan'
+gem 'charlock_holmes'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise_token_auth'
@@ -24,6 +25,7 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mswin mswin64 mingw x64_mingw jruby]
+gem 'validate_url'
 
 group :development, :test do
   gem 'bullet'
