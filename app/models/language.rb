@@ -20,5 +20,6 @@ class Language < ApplicationRecord
   validates :name, presence: true
   validates :flag, presence: true
 
-  has_many :words, dependent: :destroy
+  has_many :original_words, class_name: 'Word', dependent: :destroy
+  has_many :answer_words, class_name: 'Word', dependent: :destroy
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_24_090954) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_25_080714) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,14 +64,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_24_090954) do
   create_table "words", force: :cascade do |t|
     t.string "name", null: false
     t.string "answer", null: false
-    t.bigint "language_id", null: false
     t.bigint "course_id", null: false
+    t.bigint "original_language_id", null: false
+    t.bigint "answer_language_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["answer_language_id"], name: "index_words_on_answer_language_id"
     t.index ["course_id"], name: "index_words_on_course_id"
-    t.index ["language_id"], name: "index_words_on_language_id"
+    t.index ["original_language_id"], name: "index_words_on_original_language_id"
   end
 
   add_foreign_key "words", "courses"
-  add_foreign_key "words", "languages"
+  add_foreign_key "words", "languages", column: "answer_language_id"
+  add_foreign_key "words", "languages", column: "original_language_id"
 end
