@@ -17,5 +17,6 @@ FactoryBot.define do
   factory :course do
     slug { Faker::Internet.slug }
     title { Faker::Lorem.sentence }
+    thumbnail_url { Faker::Internet.url }
   end
 end
