@@ -1,1 +1,1 @@
-json.extract!(course, :id, :title, :slug)
+json.extract!(course, :id, :title, :slug, :thumbnail_url)
