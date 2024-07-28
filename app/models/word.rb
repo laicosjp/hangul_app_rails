@@ -28,6 +28,7 @@ class Word < ApplicationRecord
   validates :answer, presence: true
 
   belongs_to :course
+  counter_culture :course
   belongs_to :original_language, class_name: 'Language'
   belongs_to :answer_language, class_name: 'Language'
 end
