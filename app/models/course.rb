@@ -16,7 +16,7 @@
 class Course < ApplicationRecord
   validates :title, presence: true
   validates :slug, presence: true, uniqueness: true
-  validates :thumbnail_url, url: { allow_blank: true }
+  validates :thumbnail_url, url: true
 
   has_many :words, dependent: :destroy
 end
