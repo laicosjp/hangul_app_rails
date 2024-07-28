@@ -5,6 +5,7 @@ ruby '3.0.5'
 gem 'bootsnap', require: false
 gem 'cancancan'
 gem 'charlock_holmes'
+gem 'counter_culture'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise_token_auth'
