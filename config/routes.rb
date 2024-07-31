@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       mount_devise_token_auth_for 'User', at: 'auth'
       resource :profile
       resources :courses, only: %i[index show]
+      resources :general_announcements, only: %i[index show]
     end
   end
 end
