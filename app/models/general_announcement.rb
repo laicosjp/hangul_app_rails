@@ -3,7 +3,7 @@
 # Table name: general_announcements
 #
 #  id         :bigint           not null, primary key
-#  body       :string           not null
+#  body       :text             not null
 #  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

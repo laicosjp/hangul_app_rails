@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_31_131224) do
 
   create_table "general_announcements", force: :cascade do |t|
     t.string "title", null: false
-    t.string "body", null: false
+    t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
