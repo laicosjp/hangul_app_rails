@@ -5,5 +5,6 @@ class Api::V1::CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @words = @course.words
   end
 end
