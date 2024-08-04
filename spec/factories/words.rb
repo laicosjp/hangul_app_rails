@@ -25,10 +25,10 @@
 #
 FactoryBot.define do
   factory :word do
-    name { "MyString" }
-    answer { "MyString" }
-    course { nil }
-    original_language { nil }
-    answer_language { nil }
+    name { 'Hello' }
+    answer { 'こんにちは' }
+    course { create(:course) }
+    original_language { create(:language) }
+    answer_language { create(:language) }
   end
 end
