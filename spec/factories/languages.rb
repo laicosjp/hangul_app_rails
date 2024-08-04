@@ -15,8 +15,8 @@
 #
 FactoryBot.define do
   factory :language do
-    name { "English" }
-    code { "en" }
-    flag { "🇬🇧" }
+    name { 'English' }
+    sequence(:code) { |n| "en#{n}" }
+    flag { '🇬🇧' }
   end
 end
