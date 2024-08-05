@@ -8,7 +8,7 @@ class Api::V1::CoursesController < ApplicationController
     all_words = @course.words.to_a
     @words = all_words.map do |word|
       dummy_words = all_words.reject { |w| w.id == word.id }.shuffle.take(3)
-      word.attributes.symbolize_keys.merge(choices: generate_choices([word, *dummy_words]))
+      word.attributes.transform_keys { |key| key.to_s.camelize(:lower) }.merge(choices: generate_choices([word, *dummy_words]))
     end
   end
 
@@ -16,7 +16,7 @@ class Api::V1::CoursesController < ApplicationController
 
     def generate_choices(words)
       words.map do |word|
-        word.attributes.symbolize_keys.merge(is_correct: word.id == words.first.id)
+        word.attributes.transform_keys { |key| key.to_s.camelize(:lower) }.merge(isCorrect: word.id == words.first.id)
       end
     end
 end
