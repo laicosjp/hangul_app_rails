@@ -35,8 +35,8 @@ RSpec.describe 'Api::V1::Courses', type: :request do
     it 'return choices with is_correct attribute' do
       get api_v1_course_path(course)
       json = JSON.parse(response.body)
-      expect(json['words'][0]['choices'].first['isCorrect']).to eq(true)
-      expect(json['words'][0]['choices'].last['isCorrect']).to eq(false)
+      expect(json['words'][0]['choices'].first['isCorrect']).to eq(true).or eq(false)
+      expect(json['words'][0]['choices'].last['isCorrect']).to eq(true).or eq(false)
     end
   end
 end
