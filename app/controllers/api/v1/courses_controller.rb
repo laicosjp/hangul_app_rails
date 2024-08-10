@@ -17,6 +17,6 @@ class Api::V1::CoursesController < ApplicationController
     def generate_choices(words)
       words.map do |word|
         word.attributes.transform_keys { |key| key.to_s.camelize(:lower) }.merge(isCorrect: word.id == words.first.id)
-      end
+      end.shuffle
     end
 end
