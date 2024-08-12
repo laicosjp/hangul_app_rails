@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.0.5'
+ruby '3.1.5'
 
 gem 'bootsnap', require: false
 gem 'cancancan'
