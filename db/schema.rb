@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_31_131224) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_17_064025) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,6 +70,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_31_131224) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "word_choices", force: :cascade do |t|
+    t.bigint "word_id", null: false
+    t.bigint "choice_word_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["choice_word_id"], name: "index_word_choices_on_choice_word_id"
+    t.index ["word_id"], name: "index_word_choices_on_word_id"
+  end
+
   create_table "words", force: :cascade do |t|
     t.string "name", null: false
     t.string "answer", null: false
@@ -83,6 +92,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_31_131224) do
     t.index ["original_language_id"], name: "index_words_on_original_language_id"
   end
 
+  add_foreign_key "word_choices", "words"
+  add_foreign_key "word_choices", "words", column: "choice_word_id"
   add_foreign_key "words", "courses"
   add_foreign_key "words", "languages", column: "answer_language_id"
   add_foreign_key "words", "languages", column: "original_language_id"
