@@ -23,4 +23,8 @@
 class WordRecord < ApplicationRecord
   belongs_to :user
   belongs_to :word
+
+  enum status: { unstudied: 0, unmastered: 1, mastered: 2 }
+
+  validates :studied_at, presence: true, if: -> { unmastered? || mastered? }
 end
