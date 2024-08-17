@@ -5,7 +5,7 @@ class Api::V1::CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    all_words = @course.words.to_a
+    all_words = @course.words.first(Word::EXAMPLE_WORDS_COUNT).to_a
     @words = all_words.map do |word|
       dummy_words = all_words.reject { |w| w.id == word.id }.shuffle.take(3)
       word.attributes.transform_keys { |key| key.to_s.camelize(:lower) }.merge(choices: generate_choices([word, *dummy_words]))

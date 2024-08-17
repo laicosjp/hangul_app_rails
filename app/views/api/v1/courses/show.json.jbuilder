@@ -1,2 +1,2 @@
 json.partial! 'api/v1/courses/course', course: @course
-json.words @words
+json.example_words @words

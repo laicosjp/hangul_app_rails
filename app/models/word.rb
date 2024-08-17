@@ -24,6 +24,8 @@
 #  fk_rails_...  (original_language_id => languages.id)
 #
 class Word < ApplicationRecord
+  EXAMPLE_WORDS_COUNT = 30
+
   validates :name, presence: true
   validates :answer, presence: true
 
