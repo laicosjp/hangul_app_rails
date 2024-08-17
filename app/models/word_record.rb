@@ -27,4 +27,5 @@ class WordRecord < ApplicationRecord
   enum status: { correct: 1, incorrect: 2 }
 
   validates :studied_at, presence: true
+  validates :word_id, uniqueness: { scope: :user_id }
 end
