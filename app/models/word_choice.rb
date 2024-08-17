@@ -22,4 +22,14 @@
 class WordChoice < ApplicationRecord
   belongs_to :word
   belongs_to :choice_word, class_name: 'Word'
+
+  validate :validate_correctness
+
+  private
+
+    def validate_correctness
+      return if !is_correct? || word_id == choice_word_id
+
+      errors.add(:is_correct, 'can only be true if the word and choice_word are the same')
+    end
 end
