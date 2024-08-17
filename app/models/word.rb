@@ -36,4 +36,5 @@ class Word < ApplicationRecord
 
   has_many :word_choices, dependent: :destroy
   has_many :choices, through: :word_choices, source: :choice_word
+  has_many :records, class_name: 'WordRecord', dependent: :destroy
 end

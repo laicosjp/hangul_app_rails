@@ -3,6 +3,7 @@
 # Table name: word_choices
 #
 #  id             :bigint           not null, primary key
+#  is_correct     :boolean
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  choice_word_id :bigint           not null
