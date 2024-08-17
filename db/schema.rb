@@ -75,7 +75,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_17_085348) do
     t.bigint "choice_word_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_correct"
     t.index ["choice_word_id"], name: "index_word_choices_on_choice_word_id"
     t.index ["word_id"], name: "index_word_choices_on_word_id"
   end
