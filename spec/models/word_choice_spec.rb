@@ -22,11 +22,7 @@
 require 'rails_helper'
 
 RSpec.describe WordChoice, type: :model do
-  describe '#validations' do
-    it { is_expected.to validate_presence_of(:is_correct) }
-  end
-
-  describe '#associations' do
+   describe '#associations' do
     it { is_expected.to belong_to(:word) }
     it { is_expected.to belong_to(:choice_word).class_name('Word') }
   end

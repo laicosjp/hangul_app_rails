@@ -23,6 +23,7 @@ class WordChoice < ApplicationRecord
   belongs_to :word
   belongs_to :choice_word, class_name: 'Word'
 
+  validates :word_id, uniqueness: { scope: :choice_word_id }
   validate :validate_correctness
 
   private

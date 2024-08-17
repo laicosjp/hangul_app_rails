@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '3.1.5'
 
+gem 'activerecord-import'
 gem 'bootsnap', require: false
 gem 'cancancan'
 gem 'charlock_holmes'
