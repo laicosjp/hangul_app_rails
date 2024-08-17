@@ -10,8 +10,9 @@
 #
 # Indexes
 #
-#  index_word_choices_on_choice_word_id  (choice_word_id)
-#  index_word_choices_on_word_id         (word_id)
+#  index_word_choices_on_choice_word_id              (choice_word_id)
+#  index_word_choices_on_word_id                     (word_id)
+#  index_word_choices_on_word_id_and_choice_word_id  (word_id,choice_word_id) UNIQUE
 #
 # Foreign Keys
 #

@@ -12,8 +12,9 @@
 #
 # Indexes
 #
-#  index_word_records_on_user_id  (user_id)
-#  index_word_records_on_word_id  (word_id)
+#  index_word_records_on_user_id              (user_id)
+#  index_word_records_on_word_id              (word_id)
+#  index_word_records_on_word_id_and_user_id  (word_id,user_id) UNIQUE
 #
 # Foreign Keys
 #
