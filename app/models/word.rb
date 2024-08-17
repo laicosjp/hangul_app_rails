@@ -33,4 +33,7 @@ class Word < ApplicationRecord
   counter_culture :course
   belongs_to :original_language, class_name: 'Language'
   belongs_to :answer_language, class_name: 'Language'
+
+  has_many :word_choices, dependent: :destroy
+  has_many :choices, through: :word_choices, source: :choice_word
 end
