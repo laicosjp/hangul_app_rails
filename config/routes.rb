@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       mount_devise_token_auth_for 'User', at: 'auth'
       resource :profile
-      resources :courses, only: %i[index show]
+      resources :courses, only: %i[index show] do
+        resource :words, only: %i[show], module: :courses
+      end
       resources :general_announcements, only: %i[index show]
     end
   end
