@@ -460,6 +460,7 @@ DEPENDENCIES
   faker
   jbuilder
   jsbundling-rails
+  kaminari
   pg (~> 1.1)
   pry-rails
   puma (>= 5.0)
