@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_17_032809) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_17_064025) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,7 +73,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_17_032809) do
   create_table "word_choices", force: :cascade do |t|
     t.bigint "word_id", null: false
     t.bigint "choice_word_id", null: false
-    t.boolean "is_correct", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["choice_word_id"], name: "index_word_choices_on_choice_word_id"

@@ -10,9 +10,9 @@ namespace :word_choices do
       course.words.where.not(id: word_ids_with_choices).find_each do |word|
         print('Word: ', word.name, "\n")
 
-        word_choices_list << { word_id: word.id, choice_word_id: word.id, is_correct: true }
+        word_choices_list << { word_id: word.id, choice_word_id: word.id }
         course.words.where.not(id: word.id).all.sample(3).each do |choice|
-          word_choices_list << { word_id: word.id, choice_word_id: choice.id, is_correct: false }
+          word_choices_list << { word_id: word.id, choice_word_id: choice.id }
         end
       end
     end

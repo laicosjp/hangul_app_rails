@@ -3,7 +3,6 @@
 # Table name: word_choices
 #
 #  id             :bigint           not null, primary key
-#  is_correct     :boolean          default(FALSE), not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  choice_word_id :bigint           not null
@@ -21,8 +20,7 @@
 #
 FactoryBot.define do
   factory :word_choice do
-    word { nil }
-    choice_word { nil }
-    is_correct { false }
+    word { create(:word) }
+    choice_word { create(:word) }
   end
 end
