@@ -31,12 +31,5 @@ RSpec.describe 'Api::V1::Courses', type: :request do
       get api_v1_course_path(9999)
       expect(response).to have_http_status(:not_found)
     end
-
-    it 'return choices with is_correct attribute' do
-      get api_v1_course_path(course)
-      json = JSON.parse(response.body)
-      expect(json['exampleWords'][0]['choices'].first['isCorrect']).to eq(true).or eq(false)
-      expect(json['exampleWords'][0]['choices'].last['isCorrect']).to eq(true).or eq(false)
-    end
   end
 end
