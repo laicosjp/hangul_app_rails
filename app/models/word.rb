@@ -37,4 +37,6 @@ class Word < ApplicationRecord
   has_many :word_choices, dependent: :destroy
   has_many :choices, through: :word_choices, source: :choice_word
   has_many :records, class_name: 'WordRecord', dependent: :destroy
+
+  scope :selected_by_records, ->(user_id:, status: nil) { where(id: WordRecord.where(user_id:, status:).pluck(:word_id)) }
 end

@@ -20,8 +20,4 @@ class Course < ApplicationRecord
   validates :thumbnail_url, url: true
 
   has_many :words, dependent: :destroy
-
-  def words_selected_by_records(user_id:, status: nil)
-    words.where(id: WordRecord.where(user_id:, status:).pluck(:word_id))
-  end
 end
