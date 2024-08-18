@@ -23,6 +23,8 @@
 #  fk_rails_...  (course_id => courses.id)
 #  fk_rails_...  (original_language_id => languages.id)
 #
+# typed: true
+
 class Word < ApplicationRecord
   EXAMPLE_WORDS_COUNT = 30
 
@@ -38,5 +40,5 @@ class Word < ApplicationRecord
   has_many :choices, through: :word_choices, source: :choice_word
   has_many :records, class_name: 'WordRecord', dependent: :destroy
 
-  scope :selected_by_records, ->(user_id:, status: nil) { where(id: WordRecord.where(user_id:, status:).select(:word_id)) }
+  scope :selected_by_records, ->(user_id:, status:) { joins(:records).where(records: { user_id:, status: }) }
 end
