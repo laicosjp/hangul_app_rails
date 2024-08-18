@@ -18,6 +18,14 @@ class WordRecord
   def to_ary; end
 
   class << self
+    sig do
+      params(
+        attributes: T.untyped,
+        block: T.nilable(T.proc.params(object: ::WordRecord).void)
+      ).returns(::WordRecord)
+    end
+    def new(attributes = nil, &block); end
+
     sig { returns(T::Hash[T.any(String, Symbol), Integer]) }
     def statuses; end
   end
