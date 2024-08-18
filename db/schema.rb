@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_17_032809) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_17_150916) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -76,7 +76,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_17_032809) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["choice_word_id"], name: "index_word_choices_on_choice_word_id"
+    t.index ["word_id", "choice_word_id"], name: "index_word_choices_on_word_id_and_choice_word_id", unique: true
     t.index ["word_id"], name: "index_word_choices_on_word_id"
+  end
+
+  create_table "word_records", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "word_id", null: false
+    t.integer "status"
+    t.datetime "studied_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_word_records_on_user_id"
+    t.index ["word_id", "user_id"], name: "index_word_records_on_word_id_and_user_id", unique: true
+    t.index ["word_id"], name: "index_word_records_on_word_id"
   end
 
   create_table "words", force: :cascade do |t|
@@ -94,6 +107,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_17_032809) do
 
   add_foreign_key "word_choices", "words"
   add_foreign_key "word_choices", "words", column: "choice_word_id"
+  add_foreign_key "word_records", "users"
+  add_foreign_key "word_records", "words"
   add_foreign_key "words", "courses"
   add_foreign_key "words", "languages", column: "answer_language_id"
   add_foreign_key "words", "languages", column: "original_language_id"
