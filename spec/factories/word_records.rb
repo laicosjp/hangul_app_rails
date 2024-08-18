@@ -23,9 +23,9 @@
 #
 FactoryBot.define do
   factory :word_record do
-    user { nil }
-    word { nil }
-    status { 1 }
-    studied_at { "2024-08-17 17:53:48" }
+    user { create(:user) }
+    word { create(:word) }
+    status { 'correct' }
+    studied_at { Time.current }
   end
 end
