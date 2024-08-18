@@ -19793,8 +19793,8 @@ class Pathname
 end
 
 module Process
-  extend ::RedisClient::PIDCache::CoreExt
-  extend ::ConnectionPool::ForkTracker
+  extend MessagePack::CoreExt
+  extend ActiveSupport::ForkTracker
   extend ::ActiveSupport::ForkTracker::ModernCoreExt
 
   class << self
