@@ -28,5 +28,7 @@ FactoryBot.define do
     slug { Faker::Internet.slug }
     title { Faker::Lorem.sentence }
     thumbnail_url { Faker::Internet.url }
+    original_language { create(:language) }
+    answer_language { create(:language) }
   end
 end
