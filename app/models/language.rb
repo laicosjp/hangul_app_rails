@@ -19,7 +19,4 @@ class Language < ApplicationRecord
   validates :code, presence: true, uniqueness: true
   validates :name, presence: true
   validates :flag, presence: true
-
-  has_many :original_words, class_name: 'Word', foreign_key: 'original_language_id', dependent: :destroy, inverse_of: :original_language
-  has_many :answer_words, class_name: 'Word', foreign_key: 'answer_language_id', dependent: :destroy, inverse_of: :answer_language
 end

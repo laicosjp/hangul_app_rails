@@ -16,6 +16,16 @@ class WordChoice
   sig { returns(NilClass) }
   def to_ary; end
 
+  class << self
+    sig do
+      params(
+        attributes: T.untyped,
+        block: T.nilable(T.proc.params(object: ::WordChoice).void)
+      ).returns(::WordChoice)
+    end
+    def new(attributes = nil, &block); end
+  end
+
   module CommonRelationMethods
     sig { params(block: T.nilable(T.proc.params(record: ::WordChoice).returns(T.untyped))).returns(T::Boolean) }
     def any?(&block); end

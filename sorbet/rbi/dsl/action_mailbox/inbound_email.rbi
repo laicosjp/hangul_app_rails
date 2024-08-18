@@ -23,6 +23,14 @@ class ActionMailbox::InboundEmail
   def to_ary; end
 
   class << self
+    sig do
+      params(
+        attributes: T.untyped,
+        block: T.nilable(T.proc.params(object: ::ActionMailbox::InboundEmail).void)
+      ).returns(::ActionMailbox::InboundEmail)
+    end
+    def new(attributes = nil, &block); end
+
     sig { returns(T::Hash[T.any(String, Symbol), Integer]) }
     def statuses; end
   end

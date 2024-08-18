@@ -6,7 +6,6 @@
 
 
 class Language
-  include GeneratedAssociationMethods
   include GeneratedAttributeMethods
   extend CommonRelationMethods
   extend GeneratedRelationMethods
@@ -15,6 +14,11 @@ class Language
 
   sig { returns(NilClass) }
   def to_ary; end
+
+  class << self
+    sig { params(attributes: T.untyped, block: T.nilable(T.proc.params(object: ::Language).void)).returns(::Language) }
+    def new(attributes = nil, &block); end
+  end
 
   module CommonRelationMethods
     sig { params(block: T.nilable(T.proc.params(record: ::Language).returns(T.untyped))).returns(T::Boolean) }
@@ -321,36 +325,6 @@ class Language
 
     sig { returns(::Language) }
     def third_to_last!; end
-  end
-
-  module GeneratedAssociationMethods
-    sig { returns(T::Array[T.untyped]) }
-    def answer_word_ids; end
-
-    sig { params(ids: T::Array[T.untyped]).returns(T::Array[T.untyped]) }
-    def answer_word_ids=(ids); end
-
-    # This method is created by ActiveRecord on the `Language` class because it declared `has_many :answer_words`.
-    # 🔗 [Rails guide for `has_many` association](https://guides.rubyonrails.org/association_basics.html#the-has-many-association)
-    sig { returns(::Word::PrivateCollectionProxy) }
-    def answer_words; end
-
-    sig { params(value: T::Enumerable[::Word]).void }
-    def answer_words=(value); end
-
-    sig { returns(T::Array[T.untyped]) }
-    def original_word_ids; end
-
-    sig { params(ids: T::Array[T.untyped]).returns(T::Array[T.untyped]) }
-    def original_word_ids=(ids); end
-
-    # This method is created by ActiveRecord on the `Language` class because it declared `has_many :original_words`.
-    # 🔗 [Rails guide for `has_many` association](https://guides.rubyonrails.org/association_basics.html#the-has-many-association)
-    sig { returns(::Word::PrivateCollectionProxy) }
-    def original_words; end
-
-    sig { params(value: T::Enumerable[::Word]).void }
-    def original_words=(value); end
   end
 
   module GeneratedAssociationRelationMethods
