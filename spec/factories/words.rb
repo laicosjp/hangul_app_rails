@@ -22,7 +22,5 @@ FactoryBot.define do
     name { 'Hello' }
     answer { 'こんにちは' }
     course { create(:course) }
-    original_language { create(:language) }
-    answer_language { create(:language) }
   end
 end

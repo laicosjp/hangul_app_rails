@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_18_063815) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_18_065341) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_18_063815) do
     t.datetime "updated_at", null: false
     t.string "thumbnail_url"
     t.integer "words_count", default: 0, null: false
+    t.bigint "original_language_id"
+    t.bigint "answer_language_id"
+    t.index ["answer_language_id"], name: "index_courses_on_answer_language_id"
+    t.index ["original_language_id"], name: "index_courses_on_original_language_id"
     t.index ["slug"], name: "index_courses_on_slug", unique: true
   end
 
@@ -101,6 +105,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_18_063815) do
     t.index ["course_id"], name: "index_words_on_course_id"
   end
 
+  add_foreign_key "courses", "languages", column: "answer_language_id"
+  add_foreign_key "courses", "languages", column: "original_language_id"
   add_foreign_key "word_choices", "words"
   add_foreign_key "word_choices", "words", column: "choice_word_id"
   add_foreign_key "word_records", "users"
