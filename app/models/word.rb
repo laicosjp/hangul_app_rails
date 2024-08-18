@@ -26,6 +26,8 @@
 # typed: true
 
 class Word < ApplicationRecord
+  extend T::Sig
+
   EXAMPLE_WORDS_COUNT = 30
 
   validates :name, presence: true
@@ -40,8 +42,8 @@ class Word < ApplicationRecord
   has_many :choices, through: :word_choices, source: :choice_word
   has_many :records, class_name: 'WordRecord', dependent: :destroy
 
-  sig { params(user_id: Integer, status: String).returns(ActiveRecord::Relation) }
-  scope :selected_by_records, lambda { |user_id:, status: nil|
+  sig { params(user_id: Integer, status: T.nilable(String)).returns(ActiveRecord::Relation) }
+  def self.selected_by_records(user_id:, status: nil)
     if status.blank?
       # Get the list of words that have not been studied yet.
       where.missing(:records).order(id: :asc)
@@ -51,5 +53,5 @@ class Word < ApplicationRecord
       # If status is 'incorrect', return the words that have been answered incorrectly.
       joins(:records).where(records: { user_id:, status: }).order(id: :asc)
     end
-  }
+  end
 end
