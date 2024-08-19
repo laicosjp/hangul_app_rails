@@ -19,16 +19,18 @@ RSpec.describe 'Api::V1::Courses', type: :request do
   end
 
   describe 'GET /courses/:id' do
+    let(:user) { create(:user) }
     let(:course) { create(:course) }
     let!(:word) { create_list(:word, 20, course: course) }
+    let!(:token) { user.create_new_auth_token }
 
     it 'returns a successful response' do
-      get api_v1_course_path(course)
+      get api_v1_course_path(course), headers: token
       expect(response).to have_http_status(:success)
     end
 
     it 'returns NotFound when course not found' do
-      get api_v1_course_path(9999)
+      get api_v1_course_path(9999), headers: token
       expect(response).to have_http_status(:not_found)
     end
   end
