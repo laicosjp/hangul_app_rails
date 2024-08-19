@@ -329,6 +329,60 @@ class Course
   end
 
   module GeneratedAssociationMethods
+    sig { returns(T.nilable(::Language)) }
+    def answer_language; end
+
+    sig { params(value: T.nilable(::Language)).void }
+    def answer_language=(value); end
+
+    sig { returns(T::Boolean) }
+    def answer_language_changed?; end
+
+    sig { returns(T::Boolean) }
+    def answer_language_previously_changed?; end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(::Language) }
+    def build_answer_language(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(::Language) }
+    def build_original_language(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(::Language) }
+    def create_answer_language(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(::Language) }
+    def create_answer_language!(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(::Language) }
+    def create_original_language(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(::Language) }
+    def create_original_language!(*args, &blk); end
+
+    sig { returns(T.nilable(::Language)) }
+    def original_language; end
+
+    sig { params(value: T.nilable(::Language)).void }
+    def original_language=(value); end
+
+    sig { returns(T::Boolean) }
+    def original_language_changed?; end
+
+    sig { returns(T::Boolean) }
+    def original_language_previously_changed?; end
+
+    sig { returns(T.nilable(::Language)) }
+    def reload_answer_language; end
+
+    sig { returns(T.nilable(::Language)) }
+    def reload_original_language; end
+
+    sig { void }
+    def reset_answer_language; end
+
+    sig { void }
+    def reset_original_language; end
+
     sig { returns(T::Array[T.untyped]) }
     def word_ids; end
 
@@ -534,6 +588,51 @@ class Course
   end
 
   module GeneratedAttributeMethods
+    sig { returns(T.nilable(::Integer)) }
+    def answer_language_id; end
+
+    sig { params(value: T.nilable(::Integer)).returns(T.nilable(::Integer)) }
+    def answer_language_id=(value); end
+
+    sig { returns(T::Boolean) }
+    def answer_language_id?; end
+
+    sig { returns(T.nilable(::Integer)) }
+    def answer_language_id_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def answer_language_id_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def answer_language_id_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    def answer_language_id_change; end
+
+    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    def answer_language_id_change_to_be_saved; end
+
+    sig { params(from: T.nilable(::Integer), to: T.nilable(::Integer)).returns(T::Boolean) }
+    def answer_language_id_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::Integer)) }
+    def answer_language_id_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    def answer_language_id_previous_change; end
+
+    sig { params(from: T.nilable(::Integer), to: T.nilable(::Integer)).returns(T::Boolean) }
+    def answer_language_id_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::Integer)) }
+    def answer_language_id_previously_was; end
+
+    sig { returns(T.nilable(::Integer)) }
+    def answer_language_id_was; end
+
+    sig { void }
+    def answer_language_id_will_change!; end
+
     sig { returns(::ActiveSupport::TimeWithZone) }
     def created_at; end
 
@@ -669,6 +768,54 @@ class Course
     sig { void }
     def id_will_change!; end
 
+    sig { returns(T.nilable(::Integer)) }
+    def original_language_id; end
+
+    sig { params(value: T.nilable(::Integer)).returns(T.nilable(::Integer)) }
+    def original_language_id=(value); end
+
+    sig { returns(T::Boolean) }
+    def original_language_id?; end
+
+    sig { returns(T.nilable(::Integer)) }
+    def original_language_id_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def original_language_id_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def original_language_id_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    def original_language_id_change; end
+
+    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    def original_language_id_change_to_be_saved; end
+
+    sig { params(from: T.nilable(::Integer), to: T.nilable(::Integer)).returns(T::Boolean) }
+    def original_language_id_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::Integer)) }
+    def original_language_id_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    def original_language_id_previous_change; end
+
+    sig { params(from: T.nilable(::Integer), to: T.nilable(::Integer)).returns(T::Boolean) }
+    def original_language_id_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::Integer)) }
+    def original_language_id_previously_was; end
+
+    sig { returns(T.nilable(::Integer)) }
+    def original_language_id_was; end
+
+    sig { void }
+    def original_language_id_will_change!; end
+
+    sig { void }
+    def restore_answer_language_id!; end
+
     sig { void }
     def restore_created_at!; end
 
@@ -677,6 +824,9 @@ class Course
 
     sig { void }
     def restore_id_value!; end
+
+    sig { void }
+    def restore_original_language_id!; end
 
     sig { void }
     def restore_slug!; end
@@ -692,6 +842,12 @@ class Course
 
     sig { void }
     def restore_words_count!; end
+
+    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    def saved_change_to_answer_language_id; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_answer_language_id?; end
 
     sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def saved_change_to_created_at; end
@@ -710,6 +866,12 @@ class Course
 
     sig { returns(T::Boolean) }
     def saved_change_to_id_value?; end
+
+    sig { returns(T.nilable([T.nilable(::Integer), T.nilable(::Integer)])) }
+    def saved_change_to_original_language_id; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_original_language_id?; end
 
     sig { returns(T.nilable([::String, ::String])) }
     def saved_change_to_slug; end
@@ -922,6 +1084,9 @@ class Course
     def updated_at_will_change!; end
 
     sig { returns(T::Boolean) }
+    def will_save_change_to_answer_language_id?; end
+
+    sig { returns(T::Boolean) }
     def will_save_change_to_created_at?; end
 
     sig { returns(T::Boolean) }
@@ -929,6 +1094,9 @@ class Course
 
     sig { returns(T::Boolean) }
     def will_save_change_to_id_value?; end
+
+    sig { returns(T::Boolean) }
+    def will_save_change_to_original_language_id?; end
 
     sig { returns(T::Boolean) }
     def will_save_change_to_slug?; end
