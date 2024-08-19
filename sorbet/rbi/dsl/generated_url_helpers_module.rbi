@@ -40,6 +40,9 @@ module GeneratedUrlHelpersModule
   def api_v1_user_session_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
+  def api_v1_word_records_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def cancel_api_v1_user_registration_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }

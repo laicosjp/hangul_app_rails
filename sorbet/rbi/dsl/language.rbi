@@ -6,6 +6,7 @@
 
 
 class Language
+  include GeneratedAssociationMethods
   include GeneratedAttributeMethods
   extend CommonRelationMethods
   extend GeneratedRelationMethods
@@ -325,6 +326,36 @@ class Language
 
     sig { returns(::Language) }
     def third_to_last!; end
+  end
+
+  module GeneratedAssociationMethods
+    sig { returns(T::Array[T.untyped]) }
+    def answer_course_ids; end
+
+    sig { params(ids: T::Array[T.untyped]).returns(T::Array[T.untyped]) }
+    def answer_course_ids=(ids); end
+
+    # This method is created by ActiveRecord on the `Language` class because it declared `has_many :answer_courses`.
+    # 🔗 [Rails guide for `has_many` association](https://guides.rubyonrails.org/association_basics.html#the-has-many-association)
+    sig { returns(::Course::PrivateCollectionProxy) }
+    def answer_courses; end
+
+    sig { params(value: T::Enumerable[::Course]).void }
+    def answer_courses=(value); end
+
+    sig { returns(T::Array[T.untyped]) }
+    def original_course_ids; end
+
+    sig { params(ids: T::Array[T.untyped]).returns(T::Array[T.untyped]) }
+    def original_course_ids=(ids); end
+
+    # This method is created by ActiveRecord on the `Language` class because it declared `has_many :original_courses`.
+    # 🔗 [Rails guide for `has_many` association](https://guides.rubyonrails.org/association_basics.html#the-has-many-association)
+    sig { returns(::Course::PrivateCollectionProxy) }
+    def original_courses; end
+
+    sig { params(value: T::Enumerable[::Course]).void }
+    def original_courses=(value); end
   end
 
   module GeneratedAssociationRelationMethods

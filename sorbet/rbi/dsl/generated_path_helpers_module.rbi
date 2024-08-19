@@ -40,6 +40,9 @@ module GeneratedPathHelpersModule
   def api_v1_user_session_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
+  def api_v1_word_records_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def cancel_api_v1_user_registration_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
