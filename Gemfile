@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.1.5'
+ruby '3.3.4'
 
 gem 'activerecord-import'
 gem 'bootsnap', require: false

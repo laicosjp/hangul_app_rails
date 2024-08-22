@@ -292,7 +292,7 @@ GEM
       sorbet-runtime (>= 0.5.9204)
     rdoc (6.7.0)
       psych (>= 4.0.0)
-    redis (5.2.0)
+    redis (5.3.0)
       redis-client (>= 0.22.0)
     redis-client (0.22.2)
       connection_pool
@@ -311,7 +311,7 @@ GEM
     rouge (4.3.0)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.1)
+    rspec-expectations (3.13.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-mocks (3.13.1)
@@ -368,14 +368,14 @@ GEM
     simple_xlsx_reader (1.0.5)
       nokogiri
       rubyzip
-    sorbet (0.5.11528)
-      sorbet-static (= 0.5.11528)
-    sorbet-runtime (0.5.11528)
-    sorbet-static (0.5.11528-universal-darwin)
-    sorbet-static (0.5.11528-x86_64-linux)
-    sorbet-static-and-runtime (0.5.11528)
-      sorbet (= 0.5.11528)
-      sorbet-runtime (= 0.5.11528)
+    sorbet (0.5.11532)
+      sorbet-static (= 0.5.11532)
+    sorbet-runtime (0.5.11532)
+    sorbet-static (0.5.11532-universal-darwin)
+    sorbet-static (0.5.11532-x86_64-linux)
+    sorbet-static-and-runtime (0.5.11532)
+      sorbet (= 0.5.11532)
+      sorbet-runtime (= 0.5.11532)
     spoom (1.4.2)
       erubi (>= 1.10.0)
       prism (>= 0.28.0)
@@ -489,7 +489,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.1.5p252
+   ruby 3.3.4p94
 
 BUNDLED WITH
    2.5.17
