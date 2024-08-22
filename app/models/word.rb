@@ -33,14 +33,14 @@ class Word < ApplicationRecord
   has_many :records, class_name: 'WordRecord', dependent: :destroy
 
   scope :selected_by_records, lambda { |user_id:, status: nil|
-    if status.blank?
-      # Get the list of words that have not been studied yet.
-      where.missing(:records).order(id: :asc)
-    else
+    if WordRecord.statuses.include?(status)
       # Get the list of words that have been studied.
       # If status is 'correct', return the words that have been answered correctly.
       # If status is 'incorrect', return the words that have been answered incorrectly.
       joins(:records).where(records: { user_id:, status: }).order(id: :asc)
+    else
+      # Get the list of words that have not been studied yet.
+      where.missing(:records).order(id: :asc)
     end
   }
 end
