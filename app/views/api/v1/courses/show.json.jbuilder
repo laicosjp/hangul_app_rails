@@ -5,4 +5,3 @@ json.unstudied_words_count @unstudied_words_count
 json.example_words do
   json.array! @example_words, partial: 'api/v1/words/word', as: :word
 end
-

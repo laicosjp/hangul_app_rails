@@ -52,3 +52,5 @@ Layout/IndentationConsistency:
 Lint/MissingSuper:
   Enabled: false
   
+Metrics/AbcSize:
+  Max: 25
