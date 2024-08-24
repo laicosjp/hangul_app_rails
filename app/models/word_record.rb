@@ -49,6 +49,7 @@ class WordRecord < ApplicationRecord
   }
 
   validates :first_studied_at, presence: true
+  validates :last_studied_at, presence: true, if: -> { first_studied_at.present? }
   validates :word_id, uniqueness: { scope: :user_id }
 
   def next_step
