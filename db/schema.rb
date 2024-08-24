@@ -88,11 +88,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_24_083301) do
     t.bigint "user_id", null: false
     t.bigint "word_id", null: false
     t.integer "status"
-    t.datetime "studied_at"
+    t.datetime "first_studied_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "step", default: 0, null: false
-    t.datetime "first_studied_at"
     t.datetime "last_studied_at"
     t.index ["user_id"], name: "index_word_records_on_user_id"
     t.index ["word_id", "user_id"], name: "index_word_records_on_word_id_and_user_id", unique: true

@@ -6,8 +6,7 @@
 #  first_studied_at :datetime
 #  last_studied_at  :datetime
 #  status           :integer
-#  step             :integer          default(0), not null
-#  studied_at       :datetime
+#  step             :integer          default("zero"), not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  user_id          :bigint           not null
