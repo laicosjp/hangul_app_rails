@@ -67,4 +67,8 @@ class WordRecord < ApplicationRecord
 
     WordRecord.steps.keys[previous_index]
   end
+
+  def next_scheduled_question_at
+    (last_studied_at + step_before_type_cast.minutes)
+  end
 end
