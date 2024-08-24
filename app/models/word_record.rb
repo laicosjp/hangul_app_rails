@@ -48,6 +48,22 @@ class WordRecord < ApplicationRecord
     ninety_days_later: 129_600
   }
 
-  validates :studied_at, presence: true
+  validates :first_studied_at, presence: true
   validates :word_id, uniqueness: { scope: :user_id }
+
+  def next_step
+    next_index = WordRecord.steps.keys.index(step) + 1
+
+    return WordRecord.steps.keys.last if WordRecord.steps.keys.size <= next_index
+
+    WordRecord.steps.keys[next_index]
+  end
+
+  def previous_step
+    previous_index = WordRecord.steps.keys.index(step) - 5
+
+    return WordRecord.steps.keys.first if previous_index.negative?
+
+    WordRecord.steps.keys[previous_index]
+  end
 end

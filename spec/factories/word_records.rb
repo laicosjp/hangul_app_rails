@@ -28,6 +28,8 @@ FactoryBot.define do
     user { create(:user) }
     word { create(:word) }
     status { 'correct' }
-    studied_at { Time.current }
+    step { WordRecord.steps.keys.sample }
+    first_studied_at { Time.current }
+    last_studied_at { Time.current }
   end
 end

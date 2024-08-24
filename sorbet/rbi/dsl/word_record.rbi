@@ -28,6 +28,9 @@ class WordRecord
 
     sig { returns(T::Hash[T.any(String, Symbol), Integer]) }
     def statuses; end
+
+    sig { returns(T::Hash[T.any(String, Symbol), Integer]) }
+    def steps; end
   end
 
   module CommonRelationMethods
@@ -390,10 +393,88 @@ class WordRecord
     def correct?; end
 
     sig { void }
+    def fourty_five_days_later!; end
+
+    sig { returns(T::Boolean) }
+    def fourty_five_days_later?; end
+
+    sig { void }
     def incorrect!; end
 
     sig { returns(T::Boolean) }
     def incorrect?; end
+
+    sig { void }
+    def ninety_days_later!; end
+
+    sig { returns(T::Boolean) }
+    def ninety_days_later?; end
+
+    sig { void }
+    def one_day_later!; end
+
+    sig { returns(T::Boolean) }
+    def one_day_later?; end
+
+    sig { void }
+    def one_hour_later!; end
+
+    sig { returns(T::Boolean) }
+    def one_hour_later?; end
+
+    sig { void }
+    def one_minute_later!; end
+
+    sig { returns(T::Boolean) }
+    def one_minute_later?; end
+
+    sig { void }
+    def seven_hour_later!; end
+
+    sig { returns(T::Boolean) }
+    def seven_hour_later?; end
+
+    sig { void }
+    def sixty_days_later!; end
+
+    sig { returns(T::Boolean) }
+    def sixty_days_later?; end
+
+    sig { void }
+    def ten_days_later!; end
+
+    sig { returns(T::Boolean) }
+    def ten_days_later?; end
+
+    sig { void }
+    def ten_minutes_later!; end
+
+    sig { returns(T::Boolean) }
+    def ten_minutes_later?; end
+
+    sig { void }
+    def thirty_days_later!; end
+
+    sig { returns(T::Boolean) }
+    def thirty_days_later?; end
+
+    sig { void }
+    def thirty_minutes_later!; end
+
+    sig { returns(T::Boolean) }
+    def thirty_minutes_later?; end
+
+    sig { void }
+    def three_days_later!; end
+
+    sig { returns(T::Boolean) }
+    def three_days_later?; end
+
+    sig { void }
+    def zero!; end
+
+    sig { returns(T::Boolean) }
+    def zero?; end
   end
 
   module GeneratedAssociationMethods
@@ -487,6 +568,9 @@ class WordRecord
     def extract_associated(association); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def fourty_five_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def from(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelationGroupChain) }
@@ -560,19 +644,70 @@ class WordRecord
     def merge(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def ninety_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def none(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def not_correct(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_fourty_five_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def not_incorrect(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_ninety_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_one_day_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_one_hour_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_one_minute_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_seven_hour_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_sixty_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_ten_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_ten_minutes_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_thirty_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_thirty_minutes_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_three_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_zero(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def null_relation?(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def offset(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def one_day_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def one_hour_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def one_minute_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def only(*args, &blk); end
@@ -614,10 +749,31 @@ class WordRecord
     def select(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def seven_hour_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def sixty_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def strict_loading(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def structurally_compatible?(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def ten_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def ten_minutes_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def thirty_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def thirty_minutes_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def three_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def uniq!(*args, &blk); end
@@ -651,6 +807,9 @@ class WordRecord
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def without(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def zero(*args, &blk); end
   end
 
   module GeneratedAttributeMethods
@@ -698,6 +857,61 @@ class WordRecord
 
     sig { void }
     def created_at_will_change!; end
+
+    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def first_studied_at; end
+
+    sig { params(value: T.nilable(::ActiveSupport::TimeWithZone)).returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def first_studied_at=(value); end
+
+    sig { returns(T::Boolean) }
+    def first_studied_at?; end
+
+    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def first_studied_at_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def first_studied_at_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def first_studied_at_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    def first_studied_at_change; end
+
+    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    def first_studied_at_change_to_be_saved; end
+
+    sig do
+      params(
+        from: T.nilable(::ActiveSupport::TimeWithZone),
+        to: T.nilable(::ActiveSupport::TimeWithZone)
+      ).returns(T::Boolean)
+    end
+    def first_studied_at_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def first_studied_at_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    def first_studied_at_previous_change; end
+
+    sig do
+      params(
+        from: T.nilable(::ActiveSupport::TimeWithZone),
+        to: T.nilable(::ActiveSupport::TimeWithZone)
+      ).returns(T::Boolean)
+    end
+    def first_studied_at_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def first_studied_at_previously_was; end
+
+    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def first_studied_at_was; end
+
+    sig { void }
+    def first_studied_at_will_change!; end
 
     sig { returns(::Integer) }
     def id; end
@@ -789,8 +1003,66 @@ class WordRecord
     sig { void }
     def id_will_change!; end
 
+    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def last_studied_at; end
+
+    sig { params(value: T.nilable(::ActiveSupport::TimeWithZone)).returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def last_studied_at=(value); end
+
+    sig { returns(T::Boolean) }
+    def last_studied_at?; end
+
+    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def last_studied_at_before_last_save; end
+
+    sig { returns(T.untyped) }
+    def last_studied_at_before_type_cast; end
+
+    sig { returns(T::Boolean) }
+    def last_studied_at_came_from_user?; end
+
+    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    def last_studied_at_change; end
+
+    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    def last_studied_at_change_to_be_saved; end
+
+    sig do
+      params(
+        from: T.nilable(::ActiveSupport::TimeWithZone),
+        to: T.nilable(::ActiveSupport::TimeWithZone)
+      ).returns(T::Boolean)
+    end
+    def last_studied_at_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def last_studied_at_in_database; end
+
+    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    def last_studied_at_previous_change; end
+
+    sig do
+      params(
+        from: T.nilable(::ActiveSupport::TimeWithZone),
+        to: T.nilable(::ActiveSupport::TimeWithZone)
+      ).returns(T::Boolean)
+    end
+    def last_studied_at_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def last_studied_at_previously_was; end
+
+    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
+    def last_studied_at_was; end
+
+    sig { void }
+    def last_studied_at_will_change!; end
+
     sig { void }
     def restore_created_at!; end
+
+    sig { void }
+    def restore_first_studied_at!; end
 
     sig { void }
     def restore_id!; end
@@ -799,10 +1071,13 @@ class WordRecord
     def restore_id_value!; end
 
     sig { void }
+    def restore_last_studied_at!; end
+
+    sig { void }
     def restore_status!; end
 
     sig { void }
-    def restore_studied_at!; end
+    def restore_step!; end
 
     sig { void }
     def restore_updated_at!; end
@@ -819,6 +1094,12 @@ class WordRecord
     sig { returns(T::Boolean) }
     def saved_change_to_created_at?; end
 
+    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    def saved_change_to_first_studied_at; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_first_studied_at?; end
+
     sig { returns(T.nilable([::Integer, ::Integer])) }
     def saved_change_to_id; end
 
@@ -831,17 +1112,23 @@ class WordRecord
     sig { returns(T::Boolean) }
     def saved_change_to_id_value?; end
 
+    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
+    def saved_change_to_last_studied_at; end
+
+    sig { returns(T::Boolean) }
+    def saved_change_to_last_studied_at?; end
+
     sig { returns(T.nilable([T.nilable(::String), T.nilable(::String)])) }
     def saved_change_to_status; end
 
     sig { returns(T::Boolean) }
     def saved_change_to_status?; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
-    def saved_change_to_studied_at; end
+    sig { returns(T.nilable([::String, ::String])) }
+    def saved_change_to_step; end
 
     sig { returns(T::Boolean) }
-    def saved_change_to_studied_at?; end
+    def saved_change_to_step?; end
 
     sig { returns(T.nilable([::ActiveSupport::TimeWithZone, ::ActiveSupport::TimeWithZone])) }
     def saved_change_to_updated_at; end
@@ -920,60 +1207,60 @@ class WordRecord
     sig { void }
     def status_will_change!; end
 
-    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
-    def studied_at; end
+    sig { returns(::String) }
+    def step; end
 
-    sig { params(value: T.nilable(::ActiveSupport::TimeWithZone)).returns(T.nilable(::ActiveSupport::TimeWithZone)) }
-    def studied_at=(value); end
+    sig { params(value: T.any(::String, ::Symbol, ::Integer)).returns(T.any(::String, ::Symbol, ::Integer)) }
+    def step=(value); end
 
     sig { returns(T::Boolean) }
-    def studied_at?; end
+    def step?; end
 
-    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
-    def studied_at_before_last_save; end
+    sig { returns(T.nilable(::String)) }
+    def step_before_last_save; end
 
     sig { returns(T.untyped) }
-    def studied_at_before_type_cast; end
+    def step_before_type_cast; end
 
     sig { returns(T::Boolean) }
-    def studied_at_came_from_user?; end
+    def step_came_from_user?; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
-    def studied_at_change; end
+    sig { returns(T.nilable([::String, ::String])) }
+    def step_change; end
 
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
-    def studied_at_change_to_be_saved; end
-
-    sig do
-      params(
-        from: T.nilable(::ActiveSupport::TimeWithZone),
-        to: T.nilable(::ActiveSupport::TimeWithZone)
-      ).returns(T::Boolean)
-    end
-    def studied_at_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
-
-    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
-    def studied_at_in_database; end
-
-    sig { returns(T.nilable([T.nilable(::ActiveSupport::TimeWithZone), T.nilable(::ActiveSupport::TimeWithZone)])) }
-    def studied_at_previous_change; end
+    sig { returns(T.nilable([::String, ::String])) }
+    def step_change_to_be_saved; end
 
     sig do
       params(
-        from: T.nilable(::ActiveSupport::TimeWithZone),
-        to: T.nilable(::ActiveSupport::TimeWithZone)
+        from: T.any(::String, ::Symbol, ::Integer),
+        to: T.any(::String, ::Symbol, ::Integer)
       ).returns(T::Boolean)
     end
-    def studied_at_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+    def step_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
 
-    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
-    def studied_at_previously_was; end
+    sig { returns(T.nilable(::String)) }
+    def step_in_database; end
 
-    sig { returns(T.nilable(::ActiveSupport::TimeWithZone)) }
-    def studied_at_was; end
+    sig { returns(T.nilable([::String, ::String])) }
+    def step_previous_change; end
+
+    sig do
+      params(
+        from: T.any(::String, ::Symbol, ::Integer),
+        to: T.any(::String, ::Symbol, ::Integer)
+      ).returns(T::Boolean)
+    end
+    def step_previously_changed?(from: T.unsafe(nil), to: T.unsafe(nil)); end
+
+    sig { returns(T.nilable(::String)) }
+    def step_previously_was; end
+
+    sig { returns(T.nilable(::String)) }
+    def step_was; end
 
     sig { void }
-    def studied_at_will_change!; end
+    def step_will_change!; end
 
     sig { returns(::ActiveSupport::TimeWithZone) }
     def updated_at; end
@@ -1069,16 +1356,22 @@ class WordRecord
     def will_save_change_to_created_at?; end
 
     sig { returns(T::Boolean) }
+    def will_save_change_to_first_studied_at?; end
+
+    sig { returns(T::Boolean) }
     def will_save_change_to_id?; end
 
     sig { returns(T::Boolean) }
     def will_save_change_to_id_value?; end
 
     sig { returns(T::Boolean) }
+    def will_save_change_to_last_studied_at?; end
+
+    sig { returns(T::Boolean) }
     def will_save_change_to_status?; end
 
     sig { returns(T::Boolean) }
-    def will_save_change_to_studied_at?; end
+    def will_save_change_to_step?; end
 
     sig { returns(T::Boolean) }
     def will_save_change_to_updated_at?; end
@@ -1170,6 +1463,9 @@ class WordRecord
     def extract_associated(association); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def fourty_five_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def from(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelationGroupChain) }
@@ -1209,19 +1505,70 @@ class WordRecord
     def merge(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def ninety_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def none(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def not_correct(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_fourty_five_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def not_incorrect(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_ninety_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_one_day_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_one_hour_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_one_minute_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_seven_hour_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_sixty_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_ten_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_ten_minutes_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_thirty_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_thirty_minutes_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_three_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_zero(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def null_relation?(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def offset(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def one_day_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def one_hour_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def one_minute_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def only(*args, &blk); end
@@ -1263,10 +1610,31 @@ class WordRecord
     def select(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def seven_hour_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def sixty_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def strict_loading(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def structurally_compatible?(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def ten_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def ten_minutes_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def thirty_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def thirty_minutes_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def three_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def uniq!(*args, &blk); end
@@ -1282,6 +1650,9 @@ class WordRecord
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def without(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def zero(*args, &blk); end
   end
 
   class PrivateAssociationRelation < ::ActiveRecord::AssociationRelation
