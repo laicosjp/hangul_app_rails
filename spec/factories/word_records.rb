@@ -2,15 +2,16 @@
 #
 # Table name: word_records
 #
-#  id               :bigint           not null, primary key
-#  first_studied_at :datetime
-#  last_studied_at  :datetime
-#  status           :integer
-#  step             :integer          default("zero"), not null
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  user_id          :bigint           not null
-#  word_id          :bigint           not null
+#  id                         :bigint           not null, primary key
+#  first_studied_at           :datetime
+#  last_studied_at            :datetime
+#  next_scheduled_question_at :datetime
+#  status                     :integer
+#  step                       :integer          default("zero"), not null
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  user_id                    :bigint           not null
+#  word_id                    :bigint           not null
 #
 # Indexes
 #
@@ -31,5 +32,6 @@ FactoryBot.define do
     step { WordRecord.steps.keys.sample }
     first_studied_at { Time.current }
     last_studied_at { Time.current }
+    next_scheduled_question_at { Time.current.tomorrow }
   end
 end

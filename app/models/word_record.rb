@@ -2,15 +2,16 @@
 #
 # Table name: word_records
 #
-#  id               :bigint           not null, primary key
-#  first_studied_at :datetime
-#  last_studied_at  :datetime
-#  status           :integer
-#  step             :integer          default("zero"), not null
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  user_id          :bigint           not null
-#  word_id          :bigint           not null
+#  id                         :bigint           not null, primary key
+#  first_studied_at           :datetime
+#  last_studied_at            :datetime
+#  next_scheduled_question_at :datetime
+#  status                     :integer
+#  step                       :integer          default("zero"), not null
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  user_id                    :bigint           not null
+#  word_id                    :bigint           not null
 #
 # Indexes
 #
@@ -50,6 +51,7 @@ class WordRecord < ApplicationRecord
 
   validates :first_studied_at, presence: true
   validates :last_studied_at, presence: true, if: -> { first_studied_at.present? }
+  validates :next_scheduled_question_at, presence: true, if: -> { first_studied_at.present? && last_studied_at.present? }
   validates :word_id, uniqueness: { scope: :user_id }
 
   def next_step
@@ -66,9 +68,5 @@ class WordRecord < ApplicationRecord
     return WordRecord.steps.keys.first if previous_index.negative?
 
     WordRecord.steps.keys[previous_index]
-  end
-
-  def next_scheduled_question_at
-    (last_studied_at + step_before_type_cast.minutes)
   end
 end
