@@ -43,4 +43,8 @@ class Word < ApplicationRecord
       where.missing(:records).order(id: :asc)
     end
   }
+
+  scope :selected_by_next_schedule, lambda { |user_id:|
+    left_joins(:records).where(records: { user_id:, next_scheduled_question_at: ..Time.current }).order(next_scheduled_question_at: :desc)
+  }
 end
