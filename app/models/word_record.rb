@@ -25,6 +25,9 @@
 #  fk_rails_...  (word_id => words.id)
 #
 class WordRecord < ApplicationRecord
+  FORWARD_STEPS = 1
+  ROLLBACK_STEPS = 2
+
   belongs_to :user
   belongs_to :word
 
@@ -35,16 +38,13 @@ class WordRecord < ApplicationRecord
     #  one_minute_later is 1.
     #  one_hour_later is 60,
     zero: 0,
-    one_minute_later: 1,
-    ten_minutes_later: 10,
+    five_minutes_later: 5,
     thirty_minutes_later: 30,
-    one_hour_later: 60,
-    seven_hour_later: 420,
     one_day_later: 1440,
     three_days_later: 4320,
     ten_days_later: 14_400,
+    twenty_days_later: 28_800,
     thirty_days_later: 43_200,
-    fourty_five_days_later: 64_800,
     sixty_days_later: 86_400,
     ninety_days_later: 129_600
   }
@@ -55,7 +55,7 @@ class WordRecord < ApplicationRecord
   validates :word_id, uniqueness: { scope: :user_id }
 
   def next_step
-    next_index = WordRecord.steps.keys.index(step) + 1
+    next_index = WordRecord.steps.keys.index(step) + FORWARD_STEPS
 
     return WordRecord.steps.keys.last if WordRecord.steps.keys.size <= next_index
 
@@ -63,7 +63,7 @@ class WordRecord < ApplicationRecord
   end
 
   def previous_step
-    previous_index = WordRecord.steps.keys.index(step) - 5
+    previous_index = WordRecord.steps.keys.index(step) - ROLLBACK_STEPS
 
     return WordRecord.steps.keys.first if previous_index.negative?
 
@@ -72,7 +72,6 @@ class WordRecord < ApplicationRecord
 
   # --Warng: override ActiveRecord::Base#step_before_type_cast
   # because it returns String when word_record is object. (bug?)
-
   def step_before_type_cast
     WordRecord.steps[step]
   end

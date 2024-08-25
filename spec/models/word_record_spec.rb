@@ -38,11 +38,11 @@ RSpec.describe WordRecord, type: :model do
 
   describe '#methods' do
     describe '#next_step' do
-      context 'when the step is one_minute_later' do
-        let(:word_record) { create(:word_record, step: 'one_minute_later') }
+      context 'when the step is five_minutes_later' do
+        let(:word_record) { create(:word_record, step: 'five_minutes_later') }
 
-        it 'returns ten_minutes_later' do
-          expect(word_record.next_step).to eq('ten_minutes_later')
+        it 'returns thirty_minutes_later' do
+          expect(word_record.next_step).to eq('thirty_minutes_later')
         end
       end
 
@@ -59,16 +59,16 @@ RSpec.describe WordRecord, type: :model do
       context 'when the step is ninety_days_later' do
         let(:word_record){ create(:word_record, step: 'ninety_days_later') }
  
-        it 'returns three_days_later' do
-          expect(word_record.previous_step).to eq('three_days_later')
+        it 'returns thirty_days_later' do
+          expect(word_record.previous_step).to eq('thirty_days_later')
         end
       end
 
-      context 'when the step is ten_minutes_later' do
-        let(:word_record) { create(:word_record, step: 'ten_minutes_later') }
+      context 'when the step is thirty_days_later' do
+        let(:word_record) { create(:word_record, step: 'thirty_days_later') }
 
-        it 'returns one_minute_later' do
-          expect(word_record.previous_step).to eq('zero')
+        it 'returns ten_days_later' do
+          expect(word_record.previous_step).to eq('ten_days_later')
         end
       end
  
