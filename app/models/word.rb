@@ -45,6 +45,9 @@ class Word < ApplicationRecord
   }
 
   scope :selected_by_next_schedule, lambda { |user_id:|
-    left_joins(:records).where(records: { user_id:, next_scheduled_question_at: ..Time.current }).order(next_scheduled_question_at: :desc)
+    left_joins(:records)
+      .where(records: { user_id:, next_scheduled_question_at: ..Time.current })
+      .or(where.missing(:records))
+      .order(Arel.sql('records.status ASC, records.step DESC, records.next_scheduled_question_at ASC'))
   }
 end
