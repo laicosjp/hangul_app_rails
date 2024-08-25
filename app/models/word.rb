@@ -48,6 +48,10 @@ class Word < ApplicationRecord
     left_joins(:records)
       .where(records: { user_id:, next_scheduled_question_at: ..Time.current })
       .or(where.missing(:records))
-      .order(Arel.sql('records.status ASC, records.step DESC, records.next_scheduled_question_at ASC'))
+      # === Order by the above priority. ===
+      # 1. "status": "correct(2)" → "incorrect(1)" → nil(0)
+      # 2. "step": large → small
+      # 3. "next_scheduled_question_at": old → new
+      .order(Arel.sql('CASE WHEN records.status IS NULL THEN 0 ELSE records.status END DESC, records.step DESC, records.next_scheduled_question_at ASC'))
   }
 end

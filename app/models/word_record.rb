@@ -74,6 +74,6 @@ class WordRecord < ApplicationRecord
   # because it returns String when word_record is object. (bug?)
 
   def step_before_type_cast
-    WordRecord.steps[step] 
+    WordRecord.steps[step]
   end
 end
