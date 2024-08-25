@@ -4,8 +4,8 @@
 #
 #  id                         :bigint           not null, primary key
 #  first_studied_at           :datetime
-#  last_studied_at            :datetime
-#  next_scheduled_question_at :datetime
+#  last_studied_at            :datetime         default(Sun, 25 Aug 2024 13:23:11.482629000 JST +09:00), not null
+#  next_scheduled_question_at :datetime         default(Sun, 25 Aug 2024 13:23:11.484342000 JST +09:00), not null
 #  status                     :integer
 #  step                       :integer          default("zero"), not null
 #  created_at                 :datetime         not null
