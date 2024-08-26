@@ -2,13 +2,16 @@
 #
 # Table name: word_records
 #
-#  id         :bigint           not null, primary key
-#  status     :integer
-#  studied_at :datetime
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :bigint           not null
-#  word_id    :bigint           not null
+#  id                         :bigint           not null, primary key
+#  first_studied_at           :datetime
+#  last_studied_at            :datetime         default(Sun, 25 Aug 2024 13:23:11.482629000 JST +09:00), not null
+#  next_scheduled_question_at :datetime         default(Sun, 25 Aug 2024 13:23:11.484342000 JST +09:00), not null
+#  status                     :integer
+#  step                       :integer          default("zero"), not null
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  user_id                    :bigint           not null
+#  word_id                    :bigint           not null
 #
 # Indexes
 #
@@ -30,6 +33,52 @@ RSpec.describe WordRecord, type: :model do
   end
 
   describe '#validations' do
-    it { should validate_presence_of(:studied_at) }
+    it { should validate_presence_of(:first_studied_at) }
+  end
+
+  describe '#methods' do
+    describe '#next_step' do
+      context 'when the step is five_minutes_later' do
+        let(:word_record) { create(:word_record, step: 'five_minutes_later') }
+
+        it 'returns thirty_minutes_later' do
+          expect(word_record.next_step).to eq('thirty_minutes_later')
+        end
+      end
+
+      context 'when the step is ninety_days_later' do
+        let(:word_record) { create(:word_record, step: 'ninety_days_later') }
+
+        it 'returns the same value' do
+          expect(word_record.next_step).to eq('ninety_days_later')
+        end
+      end
+    end
+
+    describe '#previous_step' do
+      context 'when the step is ninety_days_later' do
+        let(:word_record){ create(:word_record, step: 'ninety_days_later') }
+ 
+        it 'returns thirty_days_later' do
+          expect(word_record.previous_step).to eq('thirty_days_later')
+        end
+      end
+
+      context 'when the step is thirty_days_later' do
+        let(:word_record) { create(:word_record, step: 'thirty_days_later') }
+
+        it 'returns ten_days_later' do
+          expect(word_record.previous_step).to eq('ten_days_later')
+        end
+      end
+ 
+      context 'when the step is zero' do
+        let(:word_record) { create(:word_record, step: 'zero') }
+
+        it 'returns the same value' do
+          expect(word_record.previous_step).to eq('zero')
+        end
+      end
+    end
   end
 end
