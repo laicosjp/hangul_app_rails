@@ -47,7 +47,9 @@ class Word < ApplicationRecord
   scope :selected_by_next_schedule, lambda { |user_id:|
     left_joins(:records)
       .where(records: { user_id:, next_scheduled_question_at: ..Time.current })
-      .or(where.missing(:records))
+      .or(where.not(
+            id: WordRecord.where(user_id:).select(:word_id)
+          ))
       # === Order by the above priority. ===
       # 1. "status": "correct(2)" → "incorrect(1)" → nil(0)
       # 2. "step": large → small
