@@ -1,10 +1,16 @@
 # typed: true
 
 class Api::V1::CoursesController < ApplicationController
+  DEFAULT_ORIGINAL_LANGUAGE = 'ko'
+  DEFAULT_ANSWER_LANGUAGE = 'jp'
+
   before_action :authenticate_user!, only: :show
 
   def index
-    @courses = Course.by_languages(original: 'ko', answer: 'jp')
+    original = params[:original_language] || DEFAULT_ORIGINAL_LANGUAGE
+    answer = params[:answer_language] || DEFAULT_ANSWER_LANGUAGE
+
+    @courses = Course.by_languages(original:, answer:)
   end
 
   def show
