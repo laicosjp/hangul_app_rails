@@ -32,4 +32,8 @@ class Course < ApplicationRecord
 
   belongs_to :original_language, class_name: 'Language'
   belongs_to :answer_language, class_name: 'Language'
+
+  scope :by_languages, lambda { |original:, answer:|
+    where(original_language: Language.find_by(code: original), answer_language: Language.find_by(code: answer))
+  }
 end

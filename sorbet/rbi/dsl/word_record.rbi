@@ -393,10 +393,10 @@ class WordRecord
     def correct?; end
 
     sig { void }
-    def fourty_five_days_later!; end
+    def five_minutes_later!; end
 
     sig { returns(T::Boolean) }
-    def fourty_five_days_later?; end
+    def five_minutes_later?; end
 
     sig { void }
     def incorrect!; end
@@ -417,24 +417,6 @@ class WordRecord
     def one_day_later?; end
 
     sig { void }
-    def one_hour_later!; end
-
-    sig { returns(T::Boolean) }
-    def one_hour_later?; end
-
-    sig { void }
-    def one_minute_later!; end
-
-    sig { returns(T::Boolean) }
-    def one_minute_later?; end
-
-    sig { void }
-    def seven_hour_later!; end
-
-    sig { returns(T::Boolean) }
-    def seven_hour_later?; end
-
-    sig { void }
     def sixty_days_later!; end
 
     sig { returns(T::Boolean) }
@@ -445,12 +427,6 @@ class WordRecord
 
     sig { returns(T::Boolean) }
     def ten_days_later?; end
-
-    sig { void }
-    def ten_minutes_later!; end
-
-    sig { returns(T::Boolean) }
-    def ten_minutes_later?; end
 
     sig { void }
     def thirty_days_later!; end
@@ -469,6 +445,12 @@ class WordRecord
 
     sig { returns(T::Boolean) }
     def three_days_later?; end
+
+    sig { void }
+    def twenty_days_later!; end
+
+    sig { returns(T::Boolean) }
+    def twenty_days_later?; end
 
     sig { void }
     def zero!; end
@@ -568,7 +550,7 @@ class WordRecord
     def extract_associated(association); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
-    def fourty_five_days_later(*args, &blk); end
+    def five_minutes_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def from(*args, &blk); end
@@ -653,7 +635,7 @@ class WordRecord
     def not_correct(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
-    def not_fourty_five_days_later(*args, &blk); end
+    def not_five_minutes_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def not_incorrect(*args, &blk); end
@@ -665,22 +647,10 @@ class WordRecord
     def not_one_day_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
-    def not_one_hour_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
-    def not_one_minute_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
-    def not_seven_hour_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def not_sixty_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def not_ten_days_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
-    def not_ten_minutes_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def not_thirty_days_later(*args, &blk); end
@@ -690,6 +660,9 @@ class WordRecord
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def not_three_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def not_twenty_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def not_zero(*args, &blk); end
@@ -702,12 +675,6 @@ class WordRecord
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def one_day_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
-    def one_hour_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
-    def one_minute_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def only(*args, &blk); end
@@ -749,9 +716,6 @@ class WordRecord
     def select(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
-    def seven_hour_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def sixty_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
@@ -764,9 +728,6 @@ class WordRecord
     def ten_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
-    def ten_minutes_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def thirty_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
@@ -774,6 +735,9 @@ class WordRecord
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def three_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
+    def twenty_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateAssociationRelation) }
     def uniq!(*args, &blk); end
@@ -1510,7 +1474,7 @@ class WordRecord
     def extract_associated(association); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
-    def fourty_five_days_later(*args, &blk); end
+    def five_minutes_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def from(*args, &blk); end
@@ -1561,7 +1525,7 @@ class WordRecord
     def not_correct(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
-    def not_fourty_five_days_later(*args, &blk); end
+    def not_five_minutes_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def not_incorrect(*args, &blk); end
@@ -1573,22 +1537,10 @@ class WordRecord
     def not_one_day_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
-    def not_one_hour_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
-    def not_one_minute_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
-    def not_seven_hour_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def not_sixty_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def not_ten_days_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
-    def not_ten_minutes_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def not_thirty_days_later(*args, &blk); end
@@ -1598,6 +1550,9 @@ class WordRecord
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def not_three_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def not_twenty_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def not_zero(*args, &blk); end
@@ -1610,12 +1565,6 @@ class WordRecord
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def one_day_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
-    def one_hour_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
-    def one_minute_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def only(*args, &blk); end
@@ -1657,9 +1606,6 @@ class WordRecord
     def select(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
-    def seven_hour_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def sixty_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
@@ -1672,9 +1618,6 @@ class WordRecord
     def ten_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
-    def ten_minutes_later(*args, &blk); end
-
-    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def thirty_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
@@ -1682,6 +1625,9 @@ class WordRecord
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def three_days_later(*args, &blk); end
+
+    sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
+    def twenty_days_later(*args, &blk); end
 
     sig { params(args: T.untyped, blk: T.untyped).returns(PrivateRelation) }
     def uniq!(*args, &blk); end
