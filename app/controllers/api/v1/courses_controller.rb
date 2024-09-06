@@ -4,7 +4,7 @@ class Api::V1::CoursesController < ApplicationController
   before_action :authenticate_user!, only: :show
 
   def index
-    @courses = Course.all
+    @courses = Course.by_languages(original: 'ko', answer: 'jp')
   end
 
   def show
