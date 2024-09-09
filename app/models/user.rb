@@ -45,4 +45,8 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
 
   has_many :word_records, dependent: :destroy
+
+  def left?
+    left_at.present?
+  end
 end
