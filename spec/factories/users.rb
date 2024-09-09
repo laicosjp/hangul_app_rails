@@ -12,6 +12,7 @@
 #  encrypted_password     :string           default(""), not null
 #  failed_attempts        :integer          default(0), not null
 #  image                  :string
+#  left_at                :datetime
 #  locked_at              :datetime
 #  name                   :string
 #  nickname               :string
