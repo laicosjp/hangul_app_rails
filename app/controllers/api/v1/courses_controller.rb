@@ -1,8 +1,8 @@
 # typed: true
 
 class Api::V1::CoursesController < ApplicationController
-  DEFAULT_ORIGINAL_LANGUAGE = 'ko'
-  DEFAULT_ANSWER_LANGUAGE = 'jp'
+  DEFAULT_ORIGINAL_LANGUAGE = 'ko'.freeze
+  DEFAULT_ANSWER_LANGUAGE = 'jp'.freeze
 
   before_action :authenticate_user!, only: :show
 

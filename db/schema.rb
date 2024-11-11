@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_24_083301) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_09_112422) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "channels", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "rss_link", null: false
+    t.string "article_link", null: false
+    t.string "generator", null: false, comment: "such as zenn.dev, medium.com, etc."
+    t.datetime "last_build_at", null: false
+    t.text "description"
+    t.string "language", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "slug", null: false
@@ -67,6 +79,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_24_083301) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
+    t.datetime "left_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -92,8 +105,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_24_083301) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "step", default: 0, null: false
-    t.datetime "last_studied_at", default: "2024-08-25 04:23:11", null: false
-    t.datetime "next_scheduled_question_at", default: "2024-08-25 04:23:11", null: false
+    t.datetime "last_studied_at", default: "2024-08-26 02:53:39", null: false
+    t.datetime "next_scheduled_question_at", default: "2024-08-26 02:53:39", null: false
     t.index ["user_id"], name: "index_word_records_on_user_id"
     t.index ["word_id", "user_id"], name: "index_word_records_on_word_id_and_user_id", unique: true
     t.index ["word_id"], name: "index_word_records_on_word_id"

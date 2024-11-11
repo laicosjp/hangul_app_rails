@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :courses, only: %i[index show] do
         resource :words, only: %i[show], module: :courses
       end
+      resource :users, only: %i[destroy]
       resources :general_announcements, only: %i[index show]
       resources :words, only: [] do
         resource :records, only: %i[show update], module: :words
