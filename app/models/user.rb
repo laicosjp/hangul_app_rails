@@ -16,7 +16,7 @@
 #  image                  :string
 #  left_at                :datetime
 #  locked_at              :datetime
-#  name                   :string
+#  name                   :string           not null
 #  nickname               :string
 #  provider               :string           default("email"), not null
 #  remember_created_at    :datetime
@@ -45,6 +45,8 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
 
   has_many :word_records, dependent: :destroy
+  
+  validates :name, presence: true, length: { in: 1..10 }
 
   def left?
     left_at.present?

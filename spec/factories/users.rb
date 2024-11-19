@@ -14,7 +14,7 @@
 #  image                  :string
 #  left_at                :datetime
 #  locked_at              :datetime
-#  name                   :string
+#  name                   :string           not null
 #  nickname               :string
 #  provider               :string           default("email"), not null
 #  remember_created_at    :datetime
@@ -39,5 +39,6 @@ FactoryBot.define do
   factory :user do
     email { Faker::Internet.email }
     password { Faker::Internet.password(min_length: 8) }
+    name { Faker::Lorem.characters(number: 1..10) }
   end
 end
