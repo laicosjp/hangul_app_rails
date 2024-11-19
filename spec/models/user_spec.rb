@@ -35,10 +35,15 @@
 #  index_users_on_uid_and_provider      (uid,provider) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
-FactoryBot.define do
-  factory :user do
-    email { Faker::Internet.email }
-    password { Faker::Internet.password(min_length: 8) }
-    name { Faker::Lorem.characters(number: 1..10) }
+require 'rails_helper'
+
+RSpec.describe User, type: :model do
+  describe 'default values' do 
+    context 'when record is created' do
+      it "sets name to 'アルダ初心者'" do
+        user = User.create!(email: 'hogehoge@example.com', password: 'hogehoge123')
+        expect(user.name).to eq("アルダ初心者")
+      end
+    end
   end
 end

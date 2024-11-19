@@ -16,7 +16,7 @@
 #  image                  :string
 #  left_at                :datetime
 #  locked_at              :datetime
-#  name                   :string           not null
+#  name                   :string           default("アルダ初心者"), not null
 #  nickname               :string
 #  provider               :string           default("email"), not null
 #  remember_created_at    :datetime
