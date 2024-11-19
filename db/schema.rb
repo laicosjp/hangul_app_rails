@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_19_130051) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
-    t.string "name", null: false
+    t.string "name", default: "アルダ初心者", null: false
     t.string "nickname"
     t.string "image"
     t.string "email"
