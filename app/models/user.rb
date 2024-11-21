@@ -45,7 +45,7 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
 
   has_many :word_records, dependent: :destroy
-  
+
   validates :name, presence: true, length: { in: 1..10 }
 
   def left?

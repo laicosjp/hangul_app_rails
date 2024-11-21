@@ -14,5 +14,9 @@ Rails.application.routes.draw do
         resource :records, only: %i[show update], module: :words
       end
     end
+
+    namespace :v2 do
+      resources :courses, only: %i[index show]
+    end
   end
 end
