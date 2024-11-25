@@ -1,6 +1,6 @@
 # typed: true
 
-class Api::V1::ProfilesController < ApplicationController
+class Api::V1::ProfilesController < Api::V1::ApplicationController
   before_action :authenticate_user!
 
   def show

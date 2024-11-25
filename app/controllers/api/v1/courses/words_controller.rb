@@ -1,4 +1,4 @@
-class Api::V1::Courses::WordsController < ApplicationController
+class Api::V1::Courses::WordsController < Api::V1::ApplicationController
   before_action :authenticate_user!
   before_action :set_course
 
