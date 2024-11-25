@@ -13,7 +13,6 @@ ENV RAILS_ENV="production" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development"
 
-
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
@@ -28,6 +27,12 @@ ENV PATH=/usr/local/node/bin:$PATH
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
     /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
     rm -rf /tmp/node-build-master
+
+# Install Bun
+RUN curl -fsSL https://bun.sh/install | bash
+
+# Add Bun to the PATH
+ENV PATH="/root/.bun/bin:${PATH}"
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
