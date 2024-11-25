@@ -23,11 +23,10 @@ RUN apt-get update -qq && \
 
 # Install JavaScript dependencies
 ARG NODE_VERSION=20.11.0
-ARG YARN_VERSION=1.22.21
+ARG BUN_VERSION=1.1.26
 ENV PATH=/usr/local/node/bin:$PATH
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
     /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
-    npm install -g yarn@$YARN_VERSION && \
     rm -rf /tmp/node-build-master
 
 # Install application gems
@@ -37,8 +36,8 @@ RUN bundle install && \
     bundle exec bootsnap precompile --gemfile
 
 # Install node modules
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+COPY package.json bun.lockb /temp/dev/
+RUN cd /temp/dev && bun install --frozen-lockfile
 
 # Copy application code
 COPY . .
