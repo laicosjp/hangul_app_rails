@@ -1,6 +1,6 @@
 # typed: true
 
-class Api::V1::CoursesController < ApplicationController
+class Api::V1::CoursesController < Api::V1::ApplicationController
   DEFAULT_ORIGINAL_LANGUAGE = 'ko'.freeze
   DEFAULT_ANSWER_LANGUAGE = 'jp'.freeze
 

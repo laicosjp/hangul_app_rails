@@ -1,4 +1,4 @@
-class Api::V1::GeneralAnnouncementsController < ApplicationController
+class Api::V1::GeneralAnnouncementsController < Api::V1::ApplicationController
   def index
     @general_announcements = GeneralAnnouncement.all
   end

@@ -1,4 +1,4 @@
-class Api::V1::UsersController < ApplicationController
+class Api::V1::UsersController < Api::V1::ApplicationController
   before_action :authenticate_user!
 
   # DO NOT USE devise_token_auth's controller when user leaves the app.

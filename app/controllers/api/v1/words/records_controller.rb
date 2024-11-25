@@ -1,6 +1,6 @@
 # typed: true
 
-class Api::V1::Words::RecordsController < ApplicationController
+class Api::V1::Words::RecordsController < Api::V1::ApplicationController
   before_action :authenticate_user!
   before_action :set_word
 

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :null_session
-  include DeviseTokenAuth::Concerns::SetUserByToken
+
+  def authenticated_admin!
+    raise "you are not admin!" unless current_user&.admin?
+  end
 end
