@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::ApplicationController
   before_action :authenticated_admin!
 
   def index
-    @users = User.all
+    @users = User.order(created_at: :desc)
   end
 
   def show
