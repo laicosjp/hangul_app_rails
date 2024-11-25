@@ -31,8 +31,8 @@ class WordRecord < ApplicationRecord
   belongs_to :user
   belongs_to :word
 
-  enum status: { correct: 1, incorrect: 2 }
-  enum step: {
+  enum :status, { correct: 1, incorrect: 2 }
+  enum :step, {
     # This integer value is based on the key name. The unit is minute.
     # ex)
     #  one_minute_later is 1.
