@@ -25,6 +25,7 @@ gem 'sorbet-runtime'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+gem 'tailwindcss-rails'
 gem 'tzinfo-data', platforms: %i[mswin mswin64 mingw x64_mingw jruby]
 gem 'validate_url'
 
