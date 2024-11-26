@@ -1,5 +1,5 @@
 {
-  "name":"hangul_app_rails",
+  "name": "hangul_app_rails",
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
